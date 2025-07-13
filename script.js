@@ -1,4 +1,6 @@
 
+let ramosAprobados = new Set();
+
 async function cargarMalla() {
   const params = new URLSearchParams(window.location.search);
   const malla = params.get("m") || "geologia";
@@ -8,6 +10,8 @@ async function cargarMalla() {
 
   const contenedor = document.getElementById("malla-container");
   contenedor.innerHTML = "";
+
+  const ramoMap = new Map(); // guardar cada ramo por su código
 
   data.forEach((semestre) => {
     const columna = document.createElement("div");
@@ -20,15 +24,42 @@ async function cargarMalla() {
       div.className = "ramo";
       if (ramo.tipo === "E") div.classList.add("electivo");
 
+      div.dataset.codigo = ramo.codigo;
+      div.dataset.requisitos = JSON.stringify(ramo.requisitos);
+
       div.style.backgroundColor = colors[ramo.tipo]?.background || "#fff";
       div.style.borderLeftColor = colors[ramo.tipo]?.border || "#000";
 
       div.innerHTML = `<strong>${ramo.codigo}</strong><br>${ramo.nombre}<br><small>Requisitos: ${ramo.requisitos.join(", ") || "Ninguno"}</small>`;
-      columna.appendChild(div);
+
+      div.addEventListener("click", () => {
+        if (div.classList.contains("aprobado")) {
+          ramosAprobados.delete(ramo.codigo);
+          div.classList.remove("aprobado");
+        } else {
+          ramosAprobados.add(ramo.codigo);
+          div.classList.add("aprobado");
+        }
+        actualizarDisponibles();
+      });
+
+      contenedor.appendChild(div);
+      ramoMap.set(ramo.codigo, div);
     });
 
     contenedor.appendChild(columna);
   });
-}
 
+  function actualizarDisponibles() {
+    ramoMap.forEach((div, codigo) => {
+      const requisitos = JSON.parse(div.dataset.requisitos);
+      const cumplidos = requisitos.every(r => ramosAprobados.has(r));
+
+      if (!div.classList.contains("aprobado")) {
+        div.style.opacity = cumplidos ? "1" : "0.4";
+        div.style.filter = cumplidos ? "none" : "grayscale(60%)";
+      }
+    });
+  }
+}
 cargarMalla();
