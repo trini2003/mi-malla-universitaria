@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla Universitaria</title>
+  <style>
+    body { font-family: sans-serif; background: #f4f4f4; padding: 20px; }
+    h1 { color: #333; }
+    .ramo { 
+      padding: 10px; 
+      margin: 10px 0; 
+      background: white; 
+      border-radius: 8px;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+    .pendiente { border-color: #aaa; }
+    .encurso { border-color: orange; }
+    .aprobado { border-color: green; }
+  </style>
+</head>
+<body>
+  <h1>Mi Malla Universitaria</h1>
+  <div class="ramo pendiente" onclick="cambiarEstado(this)">Matemática I</div>
+  <div class="ramo pendiente" onclick="cambiarEstado(this)">Química General</div>
+  <div class="ramo pendiente" onclick="cambiarEstado(this)">Física I</div>
+  <div class="ramo pendiente" onclick="cambiarEstado(this)">Programación Básica</div>
+
+  <script>
+    function cambiarEstado(elem) {
+      if (elem.classList.contains("pendiente")) {
+        elem.classList.remove("pendiente");
+        elem.classList.add("encurso");
+      } else if (elem.classList.contains("encurso")) {
+        elem.classList.remove("encurso");
+        elem.classList.add("aprobado");
+      } else {
+        elem.classList.remove("aprobado");
+        elem.classList.add("pendiente");
+      }
+    }
+  </script>
+</body>
+</html>
