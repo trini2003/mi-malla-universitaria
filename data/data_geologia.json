@@ -1,0 +1,80 @@
+[
+  {
+    "semestre": 1,
+    "ramos": [
+      {
+        "codigo": "CITI052-17",
+        "nombre": "Geolog\u00eda General",
+        "tipo": "R",
+        "requisitos": []
+      },
+      {
+        "codigo": "DYRE070-14",
+        "nombre": "Educaci\u00f3n F\u00edsica y Salud",
+        "tipo": "R",
+        "requisitos": []
+      },
+      {
+        "codigo": "MATM051-17",
+        "nombre": "\u00c1lgebra",
+        "tipo": "R",
+        "requisitos": []
+      },
+      {
+        "codigo": "MATM062-17",
+        "nombre": "Geometr\u00eda Aplicada",
+        "tipo": "R",
+        "requisitos": []
+      },
+      {
+        "codigo": "QUIM060-17",
+        "nombre": "Bases de Qu\u00edmica",
+        "tipo": "R",
+        "requisitos": []
+      }
+    ]
+  },
+  {
+    "semestre": 2,
+    "ramos": [
+      {
+        "codigo": "CITI056-17",
+        "nombre": "Geolog\u00eda Hist\u00f3rica",
+        "tipo": "R",
+        "requisitos": [
+          "CITI052-17"
+        ]
+      },
+      {
+        "codigo": "CITI077-17",
+        "nombre": "Cristalograf\u00eda",
+        "tipo": "R",
+        "requisitos": [
+          "QUIM060-17"
+        ]
+      },
+      {
+        "codigo": "MATM078-17",
+        "nombre": "C\u00e1lculo",
+        "tipo": "R",
+        "requisitos": [
+          "MATM051-17"
+        ]
+      },
+      {
+        "codigo": "MATM085-17",
+        "nombre": "F\u00edsica B\u00e1sica",
+        "tipo": "R",
+        "requisitos": [
+          "MATM051-17"
+        ]
+      },
+      {
+        "codigo": "DYRE000-19",
+        "nombre": "Acondicionamiento F\u00edsico General",
+        "tipo": "E",
+        "requisitos": []
+      }
+    ]
+  }
+]
