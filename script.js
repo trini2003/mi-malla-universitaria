@@ -1,4 +1,3 @@
-
 let ramosAprobados = new Set();
 const STORAGE_KEY = "malla-aprobados";
 
@@ -25,7 +24,7 @@ async function cargarMalla() {
   const contenedor = document.getElementById("malla-container");
   contenedor.innerHTML = "";
 
-  const ramoMap = new Map(); // guardar cada ramo por su código
+  const ramoMap = new Map();
 
   data.forEach((semestre) => {
     const columna = document.createElement("div");
