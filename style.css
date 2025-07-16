@@ -33,3 +33,9 @@ h1 {
   background-color: #cfe8ff;
   border-left-color: #517fa4;
 }
+.columna {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 220px;
+}
