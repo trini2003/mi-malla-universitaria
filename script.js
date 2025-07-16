@@ -33,38 +33,42 @@ async function cargarMalla() {
     titulo.textContent = `Semestre ${semestre.semestre}`;
     columna.appendChild(titulo);
 
-    semestre.ramos.forEach((ramo) => {
-      const div = document.createElement("div");
-      div.className = "ramo";
-      if (ramo.tipo === "E") div.classList.add("electivo");
+   columna.classList.add("columna"); // ← esto es nuevo
 
-      div.dataset.codigo = ramo.codigo;
-      div.dataset.requisitos = JSON.stringify(ramo.requisitos);
+semestre.ramos.forEach((ramo) => {
+  const div = document.createElement("div");
+  div.className = "ramo";
+  if (ramo.tipo === "E") div.classList.add("electivo");
 
-      div.style.backgroundColor = colors[ramo.tipo]?.background || "#fff";
-      div.style.borderLeftColor = colors[ramo.tipo]?.border || "#000";
+  div.dataset.codigo = ramo.codigo;
+  div.dataset.requisitos = JSON.stringify(ramo.requisitos);
 
-      div.innerHTML = `<strong>${ramo.codigo}</strong><br>${ramo.nombre}<br><small>Requisitos: ${ramo.requisitos.join(", ") || "Ninguno"}</small>`;
+  div.style.backgroundColor = colors[ramo.tipo]?.background || "#fff";
+  div.style.borderLeftColor = colors[ramo.tipo]?.border || "#000";
 
-      if (ramosAprobados.has(ramo.codigo)) {
-        div.classList.add("aprobado");
-      }
+  div.innerHTML = `<strong>${ramo.codigo}</strong><br>${ramo.nombre}<br><small>Requisitos: ${ramo.requisitos.join(", ") || "Ninguno"}</small>`;
 
-      div.addEventListener("click", () => {
-        if (div.classList.contains("aprobado")) {
-          ramosAprobados.delete(ramo.codigo);
-          div.classList.remove("aprobado");
-        } else {
-          ramosAprobados.add(ramo.codigo);
-          div.classList.add("aprobado");
-        }
-        guardarProgreso();
-        actualizarDisponibles();
-      });
+  if (ramosAprobados.has(ramo.codigo)) {
+    div.classList.add("aprobado");
+  }
 
-      contenedor.appendChild(div);
-      ramoMap.set(ramo.codigo, div);
-    });
+  div.addEventListener("click", () => {
+    if (div.classList.contains("aprobado")) {
+      ramosAprobados.delete(ramo.codigo);
+      div.classList.remove("aprobado");
+    } else {
+      ramosAprobados.add(ramo.codigo);
+      div.classList.add("aprobado");
+    }
+    guardarProgreso();
+    actualizarDisponibles();
+  });
+
+  columna.appendChild(div); // ← ahora los ramos van dentro de su columna
+  ramoMap.set(ramo.codigo, div);
+});
+
+contenedor.appendChild(columna);
 
     contenedor.appendChild(columna);
   });
