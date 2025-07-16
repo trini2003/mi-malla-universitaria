@@ -1,0 +1,99 @@
+[
+  {
+    "semestre": 1,
+    "ramos": [
+      {"codigo": "CITI052-17", "nombre": "Geología General", "tipo": "R", "requisitos": []},
+      {"codigo": "DYRE070-14", "nombre": "Educación Física y Salud", "tipo": "R", "requisitos": []},
+      {"codigo": "MATM051-17", "nombre": "Álgebra", "tipo": "R", "requisitos": []},
+      {"codigo": "MATM062-17", "nombre": "Geometría Aplicada", "tipo": "R", "requisitos": []},
+      {"codigo": "QUIM060-17", "nombre": "Bases de Química", "tipo": "R", "requisitos": []}
+    ]
+  },
+  {
+    "semestre": 2,
+    "ramos": [
+      {"codigo": "CITI056-17", "nombre": "Geología Histórica", "tipo": "R", "requisitos": ["CITI052-17"]},
+      {"codigo": "CITI077-17", "nombre": "Cristalografía", "tipo": "R", "requisitos": ["QUIM060-17"]},
+      {"codigo": "MATM078-17", "nombre": "Cálculo", "tipo": "R", "requisitos": ["MATM051-17"]},
+      {"codigo": "MATM085-17", "nombre": "Física Básica", "tipo": "R", "requisitos": ["MATM051-17"]},
+      {"codigo": "DYRE000-19", "nombre": "Acondicionamiento Físico General", "tipo": "E", "requisitos": []}
+    ]
+  },
+  {
+    "semestre": 3,
+    "ramos": [
+      {"codigo": "CITI081-17", "nombre": "Paleontología", "tipo": "R", "requisitos": ["CITI056-17"]},
+      {"codigo": "CITI083-17", "nombre": "Mineralogía", "tipo": "R", "requisitos": ["CITI077-17"]},
+      {"codigo": "MATM088-17", "nombre": "Electromagnetismo y Óptica", "tipo": "R", "requisitos": ["MATM078-17"]},
+      {"codigo": "QUIM084-17", "nombre": "Físicoquímica para Geología", "tipo": "R", "requisitos": ["QUIM060-17"]}
+    ]
+  },
+  {
+    "semestre": 4,
+    "ramos": [
+      {"codigo": "CITI106-17", "nombre": "Geofísica", "tipo": "R", "requisitos": ["MATM088-17"]},
+      {"codigo": "CITI113-23", "nombre": "Geología Estructural", "tipo": "R", "requisitos": ["CITI056-17"]},
+      {"codigo": "CITI121-17", "nombre": "Geoquímica", "tipo": "R", "requisitos": ["QUIM084-17"]},
+      {"codigo": "CITI123-23", "nombre": "Cartografía Geológica", "tipo": "R", "requisitos": ["CITI056-17"]},
+      {"codigo": "IBOS115-23", "nombre": "Topografía y SIG", "tipo": "R", "requisitos": ["CITI052-17", "MATM062-17"]}
+    ]
+  },
+  {
+    "semestre": 5,
+    "ramos": [
+      {"codigo": "CITI141-17", "nombre": "Petrología Ígnea", "tipo": "R", "requisitos": ["CITI121-17"]},
+      {"codigo": "CITI151-17", "nombre": "Petrología Sedimentaria", "tipo": "R", "requisitos": ["CITI081-17"]},
+      {"codigo": "CITI161-17", "nombre": "Geomorfología", "tipo": "R", "requisitos": ["CITI123-23"]},
+      {"codigo": "CITI166-17", "nombre": "Geoestadística", "tipo": "R", "requisitos": []},
+      {"codigo": "CITI172-17", "nombre": "Práctica de Introducción Profesional", "tipo": "R", "requisitos": ["CITI131-17"]}
+    ]
+  },
+  {
+    "semestre": 6,
+    "ramos": [
+      {"codigo": "CITI182-17", "nombre": "Petrología Metamórfica", "tipo": "R", "requisitos": ["CITI113-23", "CITI141-17", "CITI151-17"]},
+      {"codigo": "CITI184-17", "nombre": "Análisis de Cuencas", "tipo": "R", "requisitos": ["CITI161-17", "CITI151-17"]},
+      {"codigo": "CITI186-17", "nombre": "Vulcanología Física", "tipo": "R", "requisitos": ["CITI141-17", "CITI151-17"]},
+      {"codigo": "CITI188-17", "nombre": "Yacimientos Minerales", "tipo": "R", "requisitos": ["CITI141-17", "CITI166-17"]},
+      {"codigo": "CITI193-17", "nombre": "Evaluación de Proyectos", "tipo": "R", "requisitos": ["CITI166-17"]}
+    ]
+  },
+  {
+    "semestre": 7,
+    "ramos": [
+      {"codigo": "CITI194-23", "nombre": "Geología Andina", "tipo": "R", "requisitos": []},
+      {"codigo": "CITI196-17", "nombre": "Recursos Energéticos", "tipo": "R", "requisitos": ["CITI141-17"]},
+      {"codigo": "CITI198-17", "nombre": "Geología Ambiental", "tipo": "R", "requisitos": ["CITI184-17"]},
+      {"codigo": "CITI204-17", "nombre": "Geología de Campo", "tipo": "R", "requisitos": ["CITI184-17", "CITI123-23", "CITI182-17"]},
+      {"codigo": "CITI208-17", "nombre": "Métodos de Exploración", "tipo": "R", "requisitos": ["CITI193-17", "CITI188-17"]},
+      {"codigo": "CITI131-17", "nombre": "Taller de Introducción Profesional", "tipo": "R", "requisitos": ["CITI083-17"]},
+      {"codigo": "CITI169-17", "nombre": "Seminario Bibliográfico", "tipo": "R", "requisitos": ["CITI123-23"]}
+    ]
+  },
+  {
+    "semestre": 8,
+    "ramos": [
+      {"codigo": "CITI210-17", "nombre": "Hidrogeología", "tipo": "R", "requisitos": ["CITI193-17"]},
+      {"codigo": "CITI213-17", "nombre": "Geoquímica Ambiental", "tipo": "R", "requisitos": ["CITI193-17", "CITI198-17", "CITI121-17"]},
+      {"codigo": "CITI216-17", "nombre": "Geología de Minas", "tipo": "R", "requisitos": ["CITI204-17", "CITI208-17"]},
+      {"codigo": "CITI219-17", "nombre": "Geología de Campo Avanzada", "tipo": "R", "requisitos": ["CITI204-17"]},
+      {"codigo": "ELECT100", "nombre": "Optativo de Especialización I", "tipo": "E", "requisitos": []},
+      {"codigo": "ELECT101", "nombre": "Optativo de Especialización II", "tipo": "E", "requisitos": []},
+      {"codigo": "ELECT102", "nombre": "Optativo de Profundización I", "tipo": "E", "requisitos": []},
+      {"codigo": "ELECT107", "nombre": "Optativo de Profundización II", "tipo": "E", "requisitos": []}
+    ]
+  },
+  {
+    "semestre": 9,
+    "ramos": [
+      {"codigo": "CITI295-17", "nombre": "Práctica Profesional", "tipo": "R", "requisitos": ["CITI184-17"]},
+      {"codigo": "CITI296-17", "nombre": "Proyecto de Título", "tipo": "R", "requisitos": ["CITI184-17"]}
+    ]
+  },
+  {
+    "semestre": 10,
+    "ramos": [
+      {"codigo": "CITI299-17", "nombre": "Trabajo de Título", "tipo": "R", "requisitos": ["CITI296-17"]}
+    ]
+  }
+]
