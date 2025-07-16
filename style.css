@@ -11,10 +11,15 @@ h1 {
 }
 
 #malla-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
+
 
 .ramo {
   background-color: #d0f0ff;
